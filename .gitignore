@@ -1,6 +1,6 @@
 
 # program settings
-*.ini
+config.ini
 *.secret
 
 # data

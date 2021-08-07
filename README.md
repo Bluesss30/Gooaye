@@ -1,7 +1,7 @@
  # Gooayeproject
  
  ## show gooayenews article weekly
- ![gooayenews](line_notify_gooaye.jpg)
+ ![gooayenews](line_notify_gooaye.JPG)
 
  ## Data Sources
  - https://gooaye.com/
