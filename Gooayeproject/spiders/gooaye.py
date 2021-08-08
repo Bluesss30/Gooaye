@@ -22,9 +22,12 @@ class GooayeSpider(scrapy.Spider):
         return date
 
     def get_line_notify_token(self):
+        line_notify_token = ""
         settings = configparser.ConfigParser()
-        settings.read('config.ini')
-        line_notify_token = settings["DEFAULT"]["LINE_NOTIFY_TOKEN"]
+        file = ["config.ini"]
+        dataset = settings.read(file)
+        if len(dataset) == len(file):
+            line_notify_token = settings["DEFAULT"]["LINE_NOTIFY_TOKEN"]
         return line_notify_token
 
     def line_notify_message(self, token, msg):
@@ -60,15 +63,15 @@ class GooayeSpider(scrapy.Spider):
             match_date = regex_date.search(news_url)
             if news_url != "":
                 time = match_date.group(0) if len(match_date.group(0)) > 4 else '2021' + match_date.group(0)
-                print(f"time : {time}")
                 if self.parse_timestamp(time) >= self.fetch_min_date():
-                    print('here')
-
                     if not news_url in filterlist:
                         filterlist.append(news_url)
                         token = self.get_line_notify_token()
-                        message = f"{self.get_date()} gooaye news weekly broadcast \n{news_url}"
-                        res = self.line_notify_message(token, message)
+                        if token != "":
+                            message = f"{self.get_date()} gooaye news weekly broadcast \n{news_url}"
+                            res = self.line_notify_message(token, message)
+                        else:
+                            self.logger.info(f"[broadcast]{self.get_date()} gooaye news weekly broadcast \n{news_url}")
                     #...if add extra function
                     # yield Request(news_url, dont_filter=True)
 
