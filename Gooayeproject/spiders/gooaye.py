@@ -67,7 +67,7 @@ class GooayeSpider(scrapy.Spider):
                     if not news_url in filterlist:
                         filterlist.append(news_url)
                         token = self.get_line_notify_token()
-                        message = f"{self.get_date()} gooaye news \n{news_url}"
+                        message = f"{self.get_date()} gooaye news weekly broadcast \n{news_url}"
                         res = self.line_notify_message(token, message)
                     #...if add extra function
                     # yield Request(news_url, dont_filter=True)
