@@ -3,7 +3,8 @@
 echo ---------------------------------------------------
 echo Session start
 
-scrapy crawl gooaye
+pipenv install
+pipenv run scrapy crawl gooaye
 
-
-
+echo Session end
+echo ---------------------------------------------------

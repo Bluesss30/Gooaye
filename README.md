@@ -13,7 +13,14 @@
  **Windows**
  
  ### Run
- 
+ ```sh
+ $ git clone https://github.com/Bluesss30/Gooaye.git
+ web: python run.py
+ $ pip install pipenv
+ pipenv install
+ pipenv run scrapy crawl gooaye
+ ```
+
  ```bat
     ./GooayeNews.bat
  ```
