@@ -27,7 +27,7 @@
  
  ### Update Schedule
  
- - Weekly @Monday 10:00am
+ - Weekly @Tuesday 10:00am
  - Duration: ~ 1 mins
  
 
