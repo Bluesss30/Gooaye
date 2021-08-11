@@ -15,7 +15,7 @@
  ### Run
  ```sh
  $ git clone https://github.com/Bluesss30/Gooaye.git
- web: python run.py
+ web: pipenv run scrapy crawl gooaye
  $ pip install pipenv
  pipenv install
  pipenv run scrapy crawl gooaye
